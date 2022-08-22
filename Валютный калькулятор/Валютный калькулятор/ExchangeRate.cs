@@ -30,6 +30,12 @@ namespace Валютный_калькулятор
             SecondCurrency = secondCurrency;
             Value = value;
         }
+
+        internal static object FirstOrDefault()
+        {
+            throw new NotImplementedException();
+        }
+
         public void SetValue(double value)
         {
 

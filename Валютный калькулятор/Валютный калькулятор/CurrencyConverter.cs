@@ -24,8 +24,32 @@ namespace Валютный_калькулятор
         }
         public void TryDeleteExchangeRate(Currencies firstCurrency, Currencies secondCurrency)
         {
-            ExchangeRates.Remove(exchangeRate);
-        }
+            var exchangeRate = FindExchangeRate(firstCurrency, secondCurrency);
+            if (exchangeRate != null)
+            {
+                ExchangeRates.Remove(exchangeRate);
+            }
             
+        }
+        public ExchangeRate FindExchangeRate(Currencies firstCurrency, Currencies secondCurrency)
+        {
+            var exchangeRate = ExchangeRates.FirstOrDefault(x => x.FirstCurrency == firstCurrency && x.SecondCurrency == secondCurrency);
+            return exchangeRate;
+        }
+        public ExchangeRate Convert(Currencies firstCurrency, Currencies secondCurrency, int count)
+        {
+            var exchangeRate = FindExchangeRate(firstCurrency, secondCurrency);
+            if (exchangeRate != null)
+            {
+                var exchange = new ExchangeRate(firstCurrency, secondCurrency, count);
+                return exchange;
+
+            }
+            return null;
+            
+
+        }
+
+
     }
 }
