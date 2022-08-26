@@ -1,11 +1,4 @@
-﻿using Intuit.Ipp.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Валютный_калькулятор
+﻿namespace Валютный_калькулятор
 {
     public class CurrencyConverter
     {
@@ -29,7 +22,7 @@ namespace Валютный_калькулятор
             {
                 ExchangeRates.Remove(exchangeRate);
             }
-            
+
         }
         public ExchangeRate FindExchangeRate(Currencies firstCurrency, Currencies secondCurrency)
         {
@@ -46,7 +39,7 @@ namespace Валютный_калькулятор
 
             }
             return null;
-            
+
 
         }
 
