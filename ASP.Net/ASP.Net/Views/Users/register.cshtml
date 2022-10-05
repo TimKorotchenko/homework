@@ -1,0 +1,55 @@
+﻿@using ASP.Net.Models
+@{
+    ViewBag.Title = "register";
+
+}
+
+@Html.ActionLink("Назад", "Index", "Users")
+<h2>register</h2>
+
+@using (Html.BeginForm("register", "Users", FormMethod.Post))
+{
+
+    <table>
+        <tr>
+            <td>
+                <p>Введите свое имя </p>
+            </td>
+            <td>
+                <input type="text" name="name" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Введите дату рождения :</p>
+            </td>
+            <td>
+                <input type="text" name="DoB" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Введите пол :</p>
+            </td>
+            <td>
+                <input type="text" name="Gender" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>Введите описание :</p>
+            </td>
+            <td>
+                <input type="text" name="Description" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <input type="submit" value="Отправить" />
+            </td>
+            <td>
+            </td>
+        </tr>
+    </table>
+}

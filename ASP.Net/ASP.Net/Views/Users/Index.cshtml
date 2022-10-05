@@ -1,0 +1,12 @@
+﻿@using ASP.Net.Models
+
+@model List<UserInfo>
+@Html.ActionLink("Добавить", "register", "Users")
+@foreach (var item in Model)
+{
+    <div><b>Имя:</b>@item.Name</div>
+    <div>День рождения:@item.DoB.ToString("d")</div>
+    <div>Пол:@item.Gender</div>
+    <div>Инф-я о себе:@item.Description</div>
+    <br />
+}
