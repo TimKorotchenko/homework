@@ -32,17 +32,15 @@
         public ExchangeRate Convert(Currencies firstCurrency, Currencies secondCurrency, int count)
         {
             var exchangeRate = FindExchangeRate(firstCurrency, secondCurrency);
-            if (exchangeRate != null)
-            {
-                var exchange = new ExchangeRate(firstCurrency, secondCurrency, count);
-                return exchange;
+            var m1 = new ExchangeRate(exchangeRate.FirstCurrency, exchangeRate.SecondCurrency,exchangeRate.Value);
+            m1.SetCount(count/m1.Value);
 
-            }
-            return null;
 
+            return m1;
+            
 
         }
 
-
+       
     }
 }
